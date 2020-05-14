@@ -1,4 +1,4 @@
-void __cdecl bdCore::init(bool param_1) {
+void bdCore::init(bool param_1) {
 	if (!m_initialized) {
 		if (param_1) {
 			bdMemory::setAllocateFunc(bdMallocMemory::allocate);

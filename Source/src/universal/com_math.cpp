@@ -1,7 +1,5 @@
-void __cdecl MatrixTransformVector44(float *vec, float *param_2, float *out)
-{
-    if (vec == out)
-	{
+void __cdecl MatrixTransformVector44(float *vec, float *param_2, float *out) {
+    if (vec == out) {
 		return;
     }
     *out = *vec * *param_2 + vec[1] * param_2[4] + vec[2] * param_2[8] + vec[3] * param_2[12];
