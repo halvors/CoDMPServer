@@ -1,19 +1,12 @@
-bool BG_ClipMoveToDobj(entityState_s *es)
-{
-	if (isBadReadPtr(es))
-	{
+bool BG_ClipMoveToDobj(entityState_s *es) {
+	if (!es) {
 		return false;
 	}
-	if ((es->eType == 14) || (es->eType == 16))
-	{
+	if ((es->eType == 14) || (es->eType == 16)) {
 		return true;
-	}
-	else if (((es->solid == 0xFFFFFF) || (es->eType == 17)) || (es->eType == 1))
-	{
+	} else if (((es->solid == 0xFFFFFF) || (es->eType == 17)) || (es->eType == 1)) {
 		return false;
-	}
-	else
-	{
+	} else {
 		return true;
 	}
 	return false;

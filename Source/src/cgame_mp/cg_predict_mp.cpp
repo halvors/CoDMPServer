@@ -1,10 +1,8 @@
 #include "cg_local_mp.h"
 
-void __cdecl CG_ClearSavedPlayerState(int index)
-{
+void __cdecl CG_ClearSavedPlayerState(int index) {
     cg_s *cgameGlob = CG_GetLocalClientGlobals(index);
-    if (IsBadReadPtr(cgameGlob))
-	{
+    if (!cgameGlob) {
 		return;
     }
     cgameGlob->impactEffects[11] = 0;
