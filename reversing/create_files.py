@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import os
 
+# Returns a list of strings built off every line in files.txt.
 def get_file_list():
 	files = [] # list of files to append to
 
@@ -16,7 +17,7 @@ def get_directory_list():
 	directory_list = []
 
 	for i in range(len(files)):
-		if len(files[i]) == 0:
+		if len(files[i]) == 0: # there's no files in this directory.
 			continue
 
 		# Check against duplicates

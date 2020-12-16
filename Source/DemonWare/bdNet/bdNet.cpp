@@ -1,3 +1,5 @@
+// TODO: Use IDA you cheap fuck.
+
 bool __thiscall bdNetImpl::start(bdNetImpl *this, bdNetStartParams *startParams) {
 	float fVar1;
 	undefined *puVar2;

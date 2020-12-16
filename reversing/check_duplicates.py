@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+# Returns a list of strings built off every line in files.txt.
 def get_file_list():
 	files = [] # list of files to append to
 
@@ -16,22 +17,29 @@ def check_for_duplicates():
 	files_checked = [] # a list of files we've checked
 
 	for file in range(len(files)):
-		current_file = files[file] # save our current file
+		# save our current file
+		current_file = files[file]
 
+		# it's an empty string, ignore it.
 		if len(current_file) == 0:
 			continue
 
 		for i in range(len(files)):
-			if file != i: # make sure it isn't the same iteration
+			# make sure it isn't the same iteration
+			if file != i:
 				if files[i] == current_file:
-					duplicates.append(f"{files[i]}|{i}") # append it in a form that can be easily parsed. (it's formatted like this: "[file_string]|[iteration]")
+					# append it in a form that can be easily parsed. (it's formatted like this: "[file_string]|[iteration]")
+					duplicates.append(f"{files[i]}|{i}")
 			else:
 				continue
 
-		files_checked.append(current_file) # after we've finished our checks, append it so we can store the file's that were already checked.
+		# after we've finished our checks, append it so we can store the file's that were already checked.
+		files_checked.append(current_file)
 
 	return duplicates
 
+# This is just a very hacky way of fixing the duplicate list since I'm too lazy to actually
+# do this in check_for_duplicates().
 def fix_duplicates_list(list):
 	duplicates_fixed = []
 
@@ -54,7 +62,8 @@ def main():
 	duplicates = fix_duplicates_list(check_for_duplicates())
 
 	if len(duplicates) != 0:
-		for i in range(len(duplicates)): # for every duplicate found, print it.
+		# print all duplicate entries found.
+		for i in range(len(duplicates)):
 			duplicate, line = duplicates[i].split("|")
 			print(f"Duplicate file found: {duplicate} (line: {str(int(line) + 1)})")
 	else:

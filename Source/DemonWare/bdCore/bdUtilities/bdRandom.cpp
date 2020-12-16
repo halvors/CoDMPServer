@@ -9,6 +9,7 @@ public:
 	}
 
 	unsigned int nextUInt() {
+		// TODO: Clean this trash.
 		unsigned int next;
 
 		next = (this->m_val % 0x1F31D) * 0x41A7 + (this->m_val / 0x1F31D) * -0xB14;

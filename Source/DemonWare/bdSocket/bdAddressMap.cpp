@@ -1,18 +1,19 @@
 
 class bdAddressMap {
 private:
+	// TODO: Reverse class members.
 	/* data */
 
 public:
 	bdAddressMap() {
-		bdReference<bdAddrHandle> *pbVar1;
-		(this->m_addrHandles).m_data = NULL;
-		(this->m_addrHandles).m_capacity = 0;
-		(this->m_addrHandles).m_size = 0;
+		bdReference<bdAddrHandle> *v1;
+		m_addrHandles.m_data = NULL;
+		m_addrHandles.m_capacity = 0;
+		m_addrHandles.m_size = 0;
 
-		if ((this->m_addrHandles).m_capacity != 0) {
-			pbVar1 = (bdReference<bdAddrHandle> *)bdMemory::allocate((this->m_addrHandles).m_capacity << 2);
-			(this->m_addrHandles).m_data = pbVar1;
+		if (m_addrHandles.m_capacity != 0) {
+			v1 = (bdReference<bdAddrHandle> *)bdMemory::allocate(m_addrHandles.m_capacity << 2);
+			m_addrHandles.m_data = v1;
 		}
 	}
 
@@ -20,7 +21,7 @@ public:
 		bdArray<class_bdReference<class_bdCommonAddr>>::clear((bdArray<class_bdReference<class_bdCommonAddr>> *)this);
 	}
 
-	bool getAddrHandle(bdReference<class_bdCommonAddr> param_1, bdSecurityID &param_2, bdReference<class_bdAddrHandle> &param_3) {
+	bool getAddrHandle(bdReference<class_bdCommonAddr> a2, bdSecurityID &a3, bdReference<class_bdAddrHandle> &a4) {
 		// TODO: Reverse getAddrHandle()
 	}
 };
