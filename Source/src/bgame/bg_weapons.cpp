@@ -32,26 +32,32 @@ bool BG_WeaponBlocksProne(unsigned int index) {
 }
 
 bool BG_PlayerHasCompatibleWeapon(playerState_s *ps, unsigned int weaponIndex) {
-	int ammoIndex;
 	unsigned int weapIndex;
-	WeaponVariantDef *weapon;
 	int ammo;
+
 	if (!ps) {
 		return false;
 	}
-	weapon = BG_GetWeaponVariantDef(weaponIndex);
-	ammoIndex = weapon->iAmmoIndex;
-	// PDB: Start of Block
+
+	WeaponVariantDef *weapon = BG_GetWeaponVariantDef(weaponIndex);
+	int ammoIndex = weapon->iAmmoIndex;
+
+	// Interesting while loop, could be some weird ass for loop though.
 	int i = 0;
-	while (true) { // this could potentially be a for loop.
+
+	while (true) {
 		if (i > 14) {
 			return false;
 		}
+
 		weapIndex = ps->heldWeapons[i].weapon;
+
 		if ((weapIndex != 0) && (ammo = BG_AmmoForWeapon(weapIndex), ammo == ammoIndex)) {
 			break;
 		}
+
 		i++;
 	}
+
 	return true;
 }

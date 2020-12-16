@@ -11,9 +11,9 @@ float __cdecl I_rsqrt(float number) {
 	if (!IS_NAN(number)) {
 		return (float)fVar4;
 	}
-	uVar2 = _Assert_MyHandler("c:\\projects_pc\\cod\\codsrc\\src\\universal\\com_math.h",0x71,0,"%s","number");
+	uVar2 = _Assert_MyHandler("c:\\projects_pc\\cod\\codsrc\\src\\universal\\com_math.h", 0x71, 0, "%s", "number");
 	if ((uVar2 & 0xff) != 0) {
-		fVar3 = (float)(0x5f3759df - ((int)number >> 1));
+		fVar3 = (float)(0x5F3759DF - ((int)number >> 1));
 		return (1.50000000 - number * 0.50000000 * fVar3 * fVar3) * fVar3;
 	}
 	pcVar1 = (code *)swi(3);

@@ -13,5 +13,6 @@ char *BG_EmblemsGetCategoryDesc(int index) {
 	if (s_emblemSet == NULL) { // s_emblemSet is a global variable
 		return "";
 	}
+	
 	return ((index < 0) || (s_emblemSet->categoryCount < index) ? "" : s_emblemSet->categories[index].description);
 }

@@ -2,9 +2,11 @@
 
 void __cdecl CG_ClearSavedPlayerState(int index) {
     cg_s *cgameGlob = CG_GetLocalClientGlobals(index);
-    if (!cgameGlob) {
+
+	if (!cgameGlob) {
 		return;
     }
+
     cgameGlob->impactEffects[11] = 0;
     cgameGlob->impactEffects[12] = 0;
     cgameGlob->impactEffects[13] = 0;
@@ -12,5 +14,6 @@ void __cdecl CG_ClearSavedPlayerState(int index) {
     cgameGlob->impactEffects[15] = 0;
     cgameGlob->impactEffects[16] = 0;
     cgameGlob->impactEffects[17] = 0;
-    CG_ClearTransPlayerState((transPlayerState_t *)(cgameGlob->impactEffects + 0x12));
+
+	CG_ClearTransPlayerState((transPlayerState_t *)(cgameGlob->impactEffects + 0x12));
 }

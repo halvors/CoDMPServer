@@ -2,6 +2,8 @@ bool BG_ClipMoveToDobj(entityState_s *es) {
 	if (!es) {
 		return false;
 	}
+
+	// TODO: Reverse the enum that eType uses.
 	if ((es->eType == 14) || (es->eType == 16)) {
 		return true;
 	} else if (((es->solid == 0xFFFFFF) || (es->eType == 17)) || (es->eType == 1)) {
@@ -9,5 +11,6 @@ bool BG_ClipMoveToDobj(entityState_s *es) {
 	} else {
 		return true;
 	}
+
 	return false;
 }

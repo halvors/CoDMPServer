@@ -2,9 +2,11 @@ void PM_DeadMove(ps_s *ps, int *param_2) {
 	if (!ps) {
 		return;
 	}
+
 	if (param_2->field_2c) { // TODO: reverse param_2
 		float forward = Vec3Length(ps->velocity);
 		forward -= 20;
+
 		if (forward > 0) {
 			Vec3Normalize(ps->velocity);
 			ps->velocity[0] = forward * ps->velocity[0]; // *(float *)(ps + 0x30) = forward * *(float *)(ps + 0x30);
